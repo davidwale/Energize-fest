@@ -1,3 +1,4 @@
+import Navbar from "./components/Common/Navigation";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -7,33 +8,18 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Event Management app",
-  description: "Dashboard for event management",
+  title: "Energize fest",
+  description: "Energize central website for events",
 };
 
 export default function RootLayout({ children }) {
   return (
-
-      <html lang="en" className={`${inter.variable} font-sans`}>
-        <head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-               document.documentElement.classList.add('dark')
-               } else {
-              document.documentElement.classList.remove('dark')
-              }
-              `,
-            }}
-          />
-        </head>
-        <body className="">
-          <main>
-            {children}
-          </main>
-        </body>
-      </html>
-
+    <html lang="en" className={`${inter.variable} font-sans`}>
+      <head></head>
+      <body className="">
+        <Navbar />
+        <main className="mt-0">{children}</main>
+      </body>
+    </html>
   );
 }

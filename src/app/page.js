@@ -3,22 +3,10 @@ import Image from "next/image";
 import { events } from "./hooks/MockEvents";
 import EventsList from "./components/UpcomingEvents/EventsList";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 
 export default function Home() {
-   const [animateCards, setAnimateCards] = useState(false);
-   const [animateText, setAnimateText] = useState(false);
-
-   useEffect(() => {
-     const timer = setTimeout(() => {
-       setAnimateCards(true);
-       setAnimateText(true);
-     }, 4000); // Delay to trigger animation
-
-     return () => clearTimeout(timer);
-   }, []);
   const previewEvents = events.slice(0, 3);
   const router = useRouter();
   const viewAllEevents = () => {

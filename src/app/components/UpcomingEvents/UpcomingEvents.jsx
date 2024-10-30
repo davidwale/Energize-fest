@@ -14,7 +14,7 @@ const UpcomingEvents = () => {
           objectFit="cover"
           className="w-full h-full"
         />
-        <p className="absolute inset-0 flex items-center justify-center text-white z-20 text-4xl font-semibold">
+        <p className="absolute inset-0 flex items-center justify-center text-white z-20 lg:text-5xl text-3xl font-semibold">
           Find Your Event
         </p>
       </div>
